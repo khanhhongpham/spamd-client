@@ -1,4 +1,4 @@
-module github.com/baruwa-enterprise/spamd-client
+module github.com/khanhhongpham/spamd-client
 
 go 1.15
 
