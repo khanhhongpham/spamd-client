@@ -299,8 +299,10 @@ func (c *Client) cmd(ctx context.Context, rq request.Method, a request.TellActio
 
 	// Setup the socket connection
 	if conn, err = c.dial(ctx); err != nil {
+		fmt.Println("Wrong here")
 		return
 	}
+	defer conn.Close()
 
 	if c.cmdTimeout > 0 {
 		conn.SetDeadline(time.Now().Add(c.cmdTimeout))
